@@ -21,7 +21,7 @@ void sort(float x[], int N){
 int main(){
 	
 	//Write your code here
-	ifstream source("score1.txt");
+	ifstream source("score3.txt");
 	string line;
 	string mem[20];
 	float mixscore[20],sorted[20];
@@ -52,9 +52,8 @@ int main(){
 			//cout <<i-j <<":" << sorted[i] <<"\n";
 			j++;
 		}
-	write.close();
-
 	}
+	write.close();
 
 	
 	
