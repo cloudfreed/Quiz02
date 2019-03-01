@@ -23,6 +23,7 @@ int main(){
 	//Write your code here
 	ifstream source("score1.txt");
 	string line;
+	string mem[20];
 	float mixscore[20],sorted[20];
 	int i=0,j=1;
 	int count=1,real=1;
@@ -38,21 +39,22 @@ int main(){
 	ofstream write("result.txt");
 	for(int i=0;i<20;i++){
 		if(i==0){
-		//write <<i+1 <<":" << sorted[i] <<"\n";
-		cout <<i+1 <<":" << sorted[i] <<"\n";
+		//write <<i+1 <<":" << sorted[i]<<"\n";
+		//cout <<i+1 <<":" << sorted[i] <<"\n";
+		mem[i] = (i+1) + ":" + sorted[i] ; 
 		}
 		else if(sorted[i]<sorted[i-1]){
-			//write <<i+1 <<":" << sorted[i] <<"\n";
-			cout <<i+1 <<":" << sorted[i] <<"\n";
+			write <<i+1 <<":" << sorted[i]<<"\n";
+			//cout <<i+1 <<":" << sorted[i] <<"\n";
 			j=0;
 		}
 		else if(sorted[i]==sorted[i-1]){
-			//write <<i-j <<":" << sorted[i] <<"\n";
-			cout <<i-j <<":" << sorted[i] <<"\n";
+			write <<i-j <<":" << sorted[i]<<"\n";
+			//cout <<i-j <<":" << sorted[i] <<"\n";
 			j++;
 		}
 	write.close();
-
+	cout << mem[0];
 	}
 
 	
